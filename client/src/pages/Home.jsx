@@ -20,12 +20,15 @@ const Home = () => {
     const fetchPost = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:8080/api/v1/posts", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "https://ai-image-generator-5t6q.onrender.com/api/v1/posts",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         if (response.ok) {
           const result = await response.json();
           setAllPost(result.data.reverse());
